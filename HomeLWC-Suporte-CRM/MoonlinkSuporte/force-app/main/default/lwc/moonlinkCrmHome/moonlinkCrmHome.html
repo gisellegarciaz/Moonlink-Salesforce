@@ -1,0 +1,256 @@
+
+<template>
+    <section class="moonlink-home">
+
+        <!-- CAMADA ESPACIAL -->
+        <div class="stars stars-one"></div>
+        <div class="stars stars-two"></div>
+        <div class="stars stars-three"></div>
+
+        <div class="ambient-glow glow-one"></div>
+        <div class="ambient-glow glow-two"></div>
+
+        <!-- HERO -->
+        <header class="hero">
+
+            <div class="moon-system">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="moon">
+                    <div class="moon-crater crater-one"></div>
+                    <div class="moon-crater crater-two"></div>
+                    <div class="moon-crater crater-three"></div>
+                    <div class="moon-crater crater-four"></div>
+                </div>
+
+                <div class="orbit-point"></div>
+            </div>
+
+            <div class="brand">
+                <div class="brand-symbol">
+                    <span class="brand-orbit"></span>
+                    <span class="brand-m">M</span>
+                    <span class="brand-star"></span>
+                </div>
+
+                <div class="brand-text">
+                    <span class="brand-name">
+                        MOON<span>LINK</span>
+                    </span>
+                    <span class="brand-context">
+                        INTERNET SEM FRONTEIRAS
+                    </span>
+                </div>
+            </div>
+
+            <div class="hero-content">
+                <span class="eyebrow">CENTRAL COMERCIAL</span>
+
+                <h1>
+                    Olá, {userName}.
+                    <span>Vamos além.</span>
+                </h1>
+
+                <p class="subtitle">
+                    Acompanhe seus leads, fortaleça o relacionamento
+                    com clientes e transforme oportunidades em
+                    novas conexões.
+                </p>
+
+                <div class="hero-status">
+                    <span class="status-dot"></span>
+                    <span>Seu ambiente comercial</span>
+                    <span class="status-divider"></span>
+                    <strong>Conectando oportunidades</strong>
+                </div>
+            </div>
+
+            <div class="hero-caption">
+                <span>CONEXÃO</span>
+                <span>QUE VAI</span>
+                <span>MAIS LONGE</span>
+            </div>
+
+        </header>
+
+        <!-- INDICADORES -->
+        <section class="metrics">
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-label">LEADS EM ABERTO</span>
+                    <span class="metric-icon">◌</span>
+                </div>
+
+                <strong>{leadCount}</strong>
+                <span class="metric-description">
+                    aguardando conversão
+                </span>
+
+                <div class="metric-line"><span></span></div>
+            </article>
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-label">OPORTUNIDADES</span>
+                    <span class="metric-icon">✦</span>
+                </div>
+
+                <strong>{opportunityCount}</strong>
+                <span class="metric-description">
+                    em andamento
+                </span>
+
+                <div class="metric-line"><span></span></div>
+            </article>
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-label">CLIENTES ATIVOS</span>
+                    <span class="metric-icon">✧</span>
+                </div>
+
+                <strong>{customerCount}</strong>
+                <span class="metric-description">
+                    com relacionamento ativo
+                </span>
+
+                <div class="metric-line"><span></span></div>
+            </article>
+
+        </section>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <section class="content-grid">
+
+            <!-- LEADS -->
+            <article class="panel tickets-panel">
+
+                <div class="panel-header">
+                    <div>
+                        <span class="eyebrow">PIPELINE COMERCIAL</span>
+                        <h2>Seus leads</h2>
+                    </div>
+
+                    <button
+                        class="link-button"
+                        onclick={handleViewLeads}>
+                        Ver todos <span>→</span>
+                    </button>
+                </div>
+
+                <div class="tickets">
+
+                    <template lwc:if={isLoading}>
+                        <div class="loading-state">
+                            <div class="loading-orbit">
+                                <span></span>
+                            </div>
+                            <span>Carregando informações...</span>
+                        </div>
+                    </template>
+
+                    <template lwc:elseif={hasLeads}>
+                        <template
+                            for:each={leads}
+                            for:item="lead">
+
+                            <div class="ticket" key={lead.id}>
+                                <div class={lead.indicatorClass}></div>
+
+                                <div class="ticket-info">
+                                    <strong>{lead.name}</strong>
+                                    <span>
+                                        {lead.origin} · {lead.status}
+                                    </span>
+                                </div>
+
+                                <span class={lead.priorityClass}>
+                                    {lead.status}
+                                </span>
+                            </div>
+
+                        </template>
+                    </template>
+
+                    <template lwc:else>
+                        <div class="empty-state">
+                            <span class="empty-icon">✦</span>
+                            <span>
+                                Nenhum lead recente para exibir.
+                            </span>
+                        </div>
+                    </template>
+
+                </div>
+            </article>
+
+            <!-- AÇÕES RÁPIDAS -->
+            <article class="panel actions-panel">
+
+                <div class="action-orbit">
+                    <span></span>
+                </div>
+
+                <span class="eyebrow">AÇÕES RÁPIDAS</span>
+
+                <h2>Vamos fazer acontecer?</h2>
+
+                <p class="action-description">
+                    Acesse os principais recursos do seu
+                    ambiente comercial.
+                </p>
+
+                <button
+                    class="action-button primary"
+                    onclick={handleNewLead}>
+                    <span class="button-icon">＋</span>
+                    <span>Novo lead</span>
+                    <span class="button-arrow">→</span>
+                </button>
+
+                <button
+                    class="action-button secondary"
+                    onclick={handleNewCustomer}>
+                    <span class="button-icon">＋</span>
+                    <span>Novo cliente</span>
+                    <span class="button-arrow">→</span>
+                </button>
+
+                <button
+                    class="action-button secondary"
+                    onclick={handleNewOpportunity}>
+                    <span class="button-icon">✦</span>
+                    <span>Nova oportunidade</span>
+                    <span class="button-arrow">→</span>
+                </button>
+
+                <div class="lyra-note">
+                    <span class="lyra-star">✦</span>
+                    <div>
+                        <strong>Um universo de possibilidades</strong>
+                        <span>
+                            Cada conexão pode abrir novos caminhos.
+                        </span>
+                    </div>
+                </div>
+
+            </article>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="moonlink-footer">
+            <div class="footer-line"></div>
+            <span>MOONLINK</span>
+
+            <div class="footer-orbit">
+                <span></span>
+            </div>
+
+            <span>INTERNET SEM FRONTEIRAS</span>
+        </footer>
+
+    </section>
+</template>

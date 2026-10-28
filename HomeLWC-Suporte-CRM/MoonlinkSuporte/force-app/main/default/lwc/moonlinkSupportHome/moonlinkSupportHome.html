@@ -1,0 +1,512 @@
+<template>
+
+    <section class="moonlink-home">
+
+
+        <!-- =========================
+             CAMADA ESPACIAL
+        ========================== -->
+
+        <div class="stars stars-one"></div>
+        <div class="stars stars-two"></div>
+        <div class="stars stars-three"></div>
+
+        <div class="ambient-glow glow-one"></div>
+        <div class="ambient-glow glow-two"></div>
+
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <header class="hero">
+
+
+            <div class="moon-system">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="moon">
+
+                    <div class="moon-crater crater-one"></div>
+                    <div class="moon-crater crater-two"></div>
+                    <div class="moon-crater crater-three"></div>
+                    <div class="moon-crater crater-four"></div>
+
+                </div>
+
+                <div class="orbit-point"></div>
+
+            </div>
+
+
+            <!-- MARCA -->
+
+            <div class="brand">
+
+                <div class="brand-symbol">
+
+                    <span class="brand-orbit"></span>
+
+                    <span class="brand-m">
+                        M
+                    </span>
+
+                    <span class="brand-star"></span>
+
+                </div>
+
+
+                <div class="brand-text">
+
+                    <span class="brand-name">
+                        MOON<span>LINK</span>
+                    </span>
+
+                    <span class="brand-context">
+                        INTERNET SEM FRONTEIRAS
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- HERO CONTENT -->
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    CENTRAL DE SUPORTE
+                </span>
+
+
+                <!-- <h1>
+                    Olá, {operatorName}.
+                    <span>Estamos conectados.</span>
+                </h1> -->
+
+                <h1>
+                    Olá, Giselle.
+                    <span>Estamos conectados.</span>
+                </h1>
+
+
+                <p class="subtitle">
+                    Acompanhe as solicitações, priorize os atendimentos
+                    e garanta a melhor experiência para nossos clientes.
+                </p>
+
+
+                <div class="hero-status">
+
+                    <span class="status-dot"></span>
+
+                    <span>
+                        Sistema operacional
+                    </span>
+
+                    <span class="status-divider"></span>
+
+                    <strong>
+                        Tudo conectado
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-caption">
+
+                <span>CONEXÃO</span>
+                <span>QUE VAI</span>
+                <span>MAIS LONGE</span>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             MÉTRICAS
+        ========================== -->
+
+        <section class="metrics">
+
+
+            <!-- ABERTOS -->
+
+            <article class="metric-card">
+
+                <div class="metric-top">
+
+                    <span class="metric-label">
+                        ATENDIMENTOS ABERTOS
+                    </span>
+
+                    <span class="metric-icon">
+                        ◌
+                    </span>
+
+                </div>
+
+
+                <strong>
+                    {openCount}
+                </strong>
+
+
+                <span class="metric-description">
+                    aguardando atendimento
+                </span>
+
+
+                <div class="metric-line">
+                    <span></span>
+                </div>
+
+            </article>
+
+
+            <!-- URGENTES -->
+
+            <article class="metric-card urgent-card">
+
+                <div class="metric-top">
+
+                    <span class="metric-label">
+                        URGENTES
+                    </span>
+
+                    <span class="metric-icon urgent-icon">
+                        ✦
+                    </span>
+
+                </div>
+
+
+                <strong>
+                    {urgentCount}
+                </strong>
+
+
+                <span class="metric-description">
+                    precisam de atenção
+                </span>
+
+
+                <div class="metric-line">
+                    <span></span>
+                </div>
+
+            </article>
+
+
+            <!-- EM ATENDIMENTO -->
+
+            <article class="metric-card">
+
+                <div class="metric-top">
+
+                    <span class="metric-label">
+                        EM ATENDIMENTO
+                    </span>
+
+                    <span class="metric-icon">
+                        ✧
+                    </span>
+
+                </div>
+
+
+                <strong>
+                    {inProgressCount}
+                </strong>
+
+
+                <span class="metric-description">
+                    sendo tratados agora
+                </span>
+
+
+                <div class="metric-line">
+                    <span></span>
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             CONTEÚDO
+        ========================== -->
+
+        <section class="content-grid">
+
+
+            <!-- =========================
+                 ATENDIMENTOS
+            ========================== -->
+
+            <article class="panel tickets-panel">
+
+
+                <div class="panel-header">
+
+                    <div>
+
+                        <span class="eyebrow">
+                            CENTRAL DE ATENÇÃO
+                        </span>
+
+                        <h2>
+                            Atendimentos prioritários
+                        </h2>
+
+                    </div>
+
+
+                    <button class="link-button" onclick={handleViewAll}>
+
+                        Ver todos
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <div class="tickets">
+
+
+                    <!-- CARREGANDO -->
+
+                    <template if:true={isLoading}>
+
+                        <div class="loading-state">
+
+                            <div class="loading-orbit">
+                                <span></span>
+                            </div>
+
+                            <span>
+                                Sincronizando atendimentos...
+                            </span>
+
+                        </div>
+
+                    </template>
+
+
+                    <!-- ERRO -->
+
+                    <template if:true={error}>
+
+                        <div class="empty-state">
+
+                            <span class="empty-icon">
+                                !
+                            </span>
+
+                            <span>
+                                {error}
+                            </span>
+
+                        </div>
+
+                    </template>
+
+
+                    <!-- ATENDIMENTOS -->
+
+                    <template if:true={hasAttendances}>
+
+                        <template for:each={attendances} for:item="attendance">
+
+                            <div class="ticket" key={attendance.id}>
+
+
+                                <div class={attendance.indicatorClass}></div>
+
+
+                                <div class="ticket-info">
+
+                                    <strong>
+
+                                        #{attendance.number}
+                                        ·
+                                        {attendance.customer}
+
+                                    </strong>
+
+
+                                    <span>
+                                        {attendance.subject}
+                                    </span>
+
+                                </div>
+
+
+                                <span class={attendance.priorityClass}>
+
+                                    {attendance.priority}
+
+                                </span>
+
+                            </div>
+
+                        </template>
+
+                    </template>
+
+
+                    <!-- SEM ATENDIMENTOS -->
+
+                    <template if:false={hasAttendances}>
+
+                        <template if:false={isLoading}>
+
+                            <template if:false={error}>
+
+                                <div class="empty-state">
+
+                                    <span class="empty-icon">
+                                        ✦
+                                    </span>
+
+                                    <span>
+                                        Nenhum atendimento pendente.
+                                    </span>
+
+                                </div>
+
+                            </template>
+
+                        </template>
+
+                    </template>
+
+                </div>
+
+            </article>
+
+
+            <!-- =========================
+                 AÇÕES
+            ========================== -->
+
+            <article class="panel actions-panel">
+
+
+                <div class="action-orbit">
+                    <span></span>
+                </div>
+
+
+                <span class="eyebrow">
+                    AÇÕES RÁPIDAS
+                </span>
+
+
+                <h2>
+                    O que você precisa fazer?
+                </h2>
+
+
+                <p class="action-description">
+                    Escolha uma ação para continuar
+                    seu atendimento.
+                </p>
+
+
+                <button class="action-button primary" onclick={handleNewAttendance}>
+
+                    <span class="button-icon">
+                        ＋
+                    </span>
+
+                    <span>
+                        Novo atendimento
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button class="action-button secondary" onclick={handleLyra}>
+
+                    <span class="button-icon lyra-icon">
+                        ✦
+                    </span>
+
+                    <span>
+                        Falar com Lyra
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <div class="lyra-note">
+
+                    <span class="lyra-star">
+                        ✦
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Precisa de ajuda?
+                        </strong>
+
+                        <span>
+                            A Lyra está pronta para conversar.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer class="moonlink-footer">
+
+            <div class="footer-line"></div>
+
+            <span>
+                MOONLINK
+            </span>
+
+            <div class="footer-orbit">
+                <span></span>
+            </div>
+
+            <span>
+                INTERNET SEM FRONTEIRAS
+            </span>
+
+        </footer>
+
+
+    </section>
+
+</template>

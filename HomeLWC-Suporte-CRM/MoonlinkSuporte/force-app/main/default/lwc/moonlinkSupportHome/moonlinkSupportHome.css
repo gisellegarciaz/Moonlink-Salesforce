@@ -1,0 +1,1810 @@
+:host {
+    display: block;
+}
+
+
+/* =========================================================
+   PALETA MOONLINK
+========================================================= */
+
+:host {
+    --space: #05060A;
+    --space-soft: #080B13;
+
+    --lunar-blue: #3B4CCF;
+    --nebula: #9EA7FF;
+    --moon: #D3DCE6;
+    --energy: #FFF4A3;
+
+    --white: #F5F7FF;
+    --text-soft: #9DA3B8;
+    --text-muted: #686E82;
+
+    --border: rgba(158, 167, 255, 0.14);
+    --glass: rgba(255, 255, 255, 0.045);
+
+    --purple-glow:
+        rgba(158, 167, 255, 0.22);
+
+    --blue-glow:
+        rgba(59, 76, 207, 0.20);
+}
+
+
+/* =========================================================
+   BASE
+========================================================= */
+
+.moonlink-home {
+
+    position: relative;
+
+    min-height: 100%;
+
+    padding: 1.75rem;
+
+    overflow: hidden;
+
+    color: var(--white);
+
+    background:
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(59, 76, 207, 0.10),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 30%,
+            rgba(158, 167, 255, 0.08),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(59, 76, 207, 0.10),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            #030408 0%,
+            #05060A 45%,
+            #080B13 100%
+        );
+
+    border-radius: 24px;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   ESTRELAS
+========================================================= */
+
+.stars {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.7;
+
+    z-index: -2;
+
+    background-repeat: repeat;
+
+}
+
+
+/* estrelas pequenas */
+
+.stars-one {
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,0.8) 0 1px,
+            transparent 1.5px
+        );
+
+    background-size: 97px 113px;
+
+    background-position: 12px 18px;
+
+    opacity: 0.45;
+}
+
+
+/* estrelas médias */
+
+.stars-two {
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(158,167,255,0.9) 0 1px,
+            transparent 2px
+        );
+
+    background-size: 173px 149px;
+
+    background-position: 40px 70px;
+
+    opacity: 0.28;
+}
+
+
+/* pequenas estrelas douradas */
+
+.stars-three {
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,244,163,0.9) 0 1.5px,
+            transparent 2.5px
+        );
+
+    background-size: 241px 211px;
+
+    background-position: 100px 35px;
+
+    opacity: 0.20;
+}
+
+
+/* =========================================================
+   GLOWS
+========================================================= */
+
+.ambient-glow {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(70px);
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+.glow-one {
+
+    width: 400px;
+    height: 400px;
+
+    top: -220px;
+    right: -150px;
+
+    background:
+        rgba(59, 76, 207, 0.14);
+}
+
+
+.glow-two {
+
+    width: 320px;
+    height: 320px;
+
+    bottom: -170px;
+    left: -150px;
+
+    background:
+        rgba(158, 167, 255, 0.08);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    position: relative;
+
+    min-height: 370px;
+
+    padding: 2.5rem;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+
+    border:
+        1px solid rgba(158,167,255,0.14);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.055),
+            rgba(255,255,255,0.018)
+        );
+
+    box-shadow:
+
+        0 30px 90px rgba(0,0,0,0.38),
+
+        inset 0 1px 0
+        rgba(255,255,255,0.05);
+}
+
+
+/* linha luminosa */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: 0;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(158,167,255,0.7),
+            rgba(255,244,163,0.45),
+            transparent
+        );
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   MARCA
+========================================================= */
+
+.brand {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.8rem;
+
+    z-index: 4;
+}
+
+
+.brand-symbol {
+
+    position: relative;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+.brand-m {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 2rem;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: -0.12em;
+
+    color: #F7F8FF;
+
+    text-shadow:
+        0 0 18px rgba(255,255,255,0.15);
+}
+
+
+.brand-orbit {
+
+    position: absolute;
+
+    width: 48px;
+    height: 20px;
+
+    border:
+
+        1px solid
+        rgba(158,167,255,0.9);
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-25deg);
+
+    box-shadow:
+        0 0 8px rgba(158,167,255,0.35);
+}
+
+
+.brand-star {
+
+    position: absolute;
+
+    width: 7px;
+    height: 7px;
+
+    top: 2px;
+    right: 1px;
+
+    border-radius: 50%;
+
+    background:
+        var(--energy);
+
+    box-shadow:
+        0 0 8px var(--energy),
+        0 0 18px rgba(255,244,163,0.6);
+}
+
+
+.brand-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.15rem;
+}
+
+
+.brand-name {
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.22em;
+}
+
+
+.brand-name span {
+
+    color: var(--nebula);
+}
+
+
+.brand-context {
+
+    font-size: 0.52rem;
+
+    letter-spacing: 0.26em;
+
+    color: #858BA2;
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.hero-content {
+
+    position: relative;
+
+    max-width: 650px;
+
+    margin-top: 4rem;
+
+    z-index: 4;
+}
+
+
+.eyebrow {
+
+    display: block;
+
+    font-size: 0.62rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.28em;
+
+    color: var(--nebula);
+}
+
+
+h1 {
+
+    margin: 0.75rem 0 0.9rem;
+
+    max-width: 620px;
+
+    font-size: clamp(2.1rem, 4vw, 3.7rem);
+
+    line-height: 1.03;
+
+    letter-spacing: -0.045em;
+
+    font-weight: 500;
+}
+
+
+h1 span {
+
+    display: block;
+
+    color: var(--nebula);
+
+    text-shadow:
+        0 0 35px
+        rgba(158,167,255,0.18);
+}
+
+
+.subtitle {
+
+    max-width: 500px;
+
+    margin: 0;
+
+    color: var(--text-soft);
+
+    font-size: 0.92rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   STATUS
+========================================================= */
+
+.hero-status {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.55rem;
+
+    margin-top: 1.6rem;
+
+    font-size: 0.68rem;
+
+    color: #777D91;
+}
+
+
+.hero-status strong {
+
+    color: #B7BED4;
+
+    font-weight: 500;
+}
+
+
+.status-dot {
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        #7EE0B5;
+
+    box-shadow:
+        0 0 8px
+        rgba(126,224,181,0.8);
+}
+
+
+.status-divider {
+
+    width: 1px;
+
+    height: 12px;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    margin: 0 0.15rem;
+}
+
+
+/* =========================================================
+   LUA
+========================================================= */
+
+.moon-system {
+
+    position: absolute;
+
+    width: 480px;
+    height: 480px;
+
+    right: -100px;
+    top: -65px;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* lua */
+
+.moon {
+
+    position: absolute;
+
+    width: 330px;
+    height: 330px;
+
+    right: 25px;
+    top: 70px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            #F0F4FA 0%,
+            #D3DCE6 30%,
+            #9CA8B7 65%,
+            #667181 100%
+        );
+
+    box-shadow:
+
+        -20px 0 70px
+        rgba(158,167,255,0.18),
+
+        inset -35px -25px 70px
+        rgba(20,25,35,0.42);
+}
+
+
+/* lado escuro */
+
+.moon::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    border-radius: 50%;
+
+    background:
+
+        linear-gradient(
+            100deg,
+            transparent 40%,
+            rgba(10,14,23,0.42) 100%
+        );
+}
+
+
+/* crateras */
+
+.moon-crater {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    background:
+        rgba(70,78,91,0.18);
+
+    box-shadow:
+        inset 3px 3px 5px
+        rgba(255,255,255,0.15);
+}
+
+
+.crater-one {
+
+    width: 48px;
+    height: 48px;
+
+    left: 70px;
+    top: 80px;
+}
+
+
+.crater-two {
+
+    width: 30px;
+    height: 30px;
+
+    left: 180px;
+    top: 45px;
+}
+
+
+.crater-three {
+
+    width: 65px;
+    height: 65px;
+
+    left: 185px;
+    top: 175px;
+}
+
+
+.crater-four {
+
+    width: 25px;
+    height: 25px;
+
+    left: 85px;
+    top: 220px;
+}
+
+
+/* órbitas */
+
+.orbit {
+
+    position: absolute;
+
+    border:
+
+        1px solid
+        rgba(158,167,255,0.55);
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-28deg);
+
+    box-shadow:
+        0 0 15px
+        rgba(158,167,255,0.12);
+}
+
+
+.orbit-one {
+
+    width: 510px;
+    height: 175px;
+
+    top: 160px;
+    right: -40px;
+}
+
+
+.orbit-two {
+
+    width: 420px;
+    height: 130px;
+
+    top: 180px;
+    right: 10px;
+
+    border-color:
+        rgba(255,244,163,0.24);
+}
+
+
+/* ponto da órbita */
+
+.orbit-point {
+
+    position: absolute;
+
+    width: 10px;
+    height: 10px;
+
+    right: 55px;
+    top: 135px;
+
+    border-radius: 50%;
+
+    background:
+        var(--energy);
+
+    box-shadow:
+
+        0 0 10px
+        var(--energy),
+
+        0 0 30px
+        rgba(255,244,163,0.45);
+}
+
+
+/* =========================================================
+   FRASE DECORATIVA
+========================================================= */
+
+.hero-caption {
+
+    position: absolute;
+
+    right: 2.5rem;
+    bottom: 2.2rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.15rem;
+
+    z-index: 3;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 0.45em;
+
+    color: rgba(158,167,255,0.6);
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   MÉTRICAS
+========================================================= */
+
+.metrics {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+}
+
+
+.metric-card {
+
+    position: relative;
+
+    padding: 1.35rem;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    border:
+        1px solid
+        rgba(158,167,255,0.10);
+
+    background:
+        rgba(255,255,255,0.035);
+
+    backdrop-filter: blur(16px);
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.metric-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    right: -60px;
+    bottom: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(59,76,207,0.12);
+
+    filter: blur(20px);
+}
+
+
+.metric-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(158,167,255,0.25);
+
+    background:
+        rgba(255,255,255,0.05);
+}
+
+
+.metric-top {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.metric-label {
+
+    color: #858BA0;
+
+    font-size: 0.59rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.14em;
+}
+
+
+.metric-icon {
+
+    color: var(--nebula);
+
+    font-size: 1rem;
+
+    opacity: 0.7;
+}
+
+
+.urgent-icon {
+
+    color:
+        var(--energy);
+
+    text-shadow:
+        0 0 12px
+        rgba(255,244,163,0.45);
+}
+
+
+.metric-card strong {
+
+    display: block;
+
+    margin-top: 0.65rem;
+
+    font-size: 2.3rem;
+
+    font-weight: 500;
+
+    letter-spacing: -0.04em;
+}
+
+
+.metric-description {
+
+    display: block;
+
+    margin-top: 0.45rem;
+
+    color: var(--text-muted);
+
+    font-size: 0.68rem;
+}
+
+
+.metric-line {
+
+    position: relative;
+
+    height: 1px;
+
+    margin-top: 1.15rem;
+
+    background:
+        rgba(255,255,255,0.06);
+}
+
+
+.metric-line span {
+
+    display: block;
+
+    width: 35%;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--lunar-blue),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   GRID PRINCIPAL
+========================================================= */
+
+.content-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.8fr)
+        minmax(280px, 1fr);
+
+    gap: 1rem;
+
+    margin-top: 1rem;
+}
+
+
+/* =========================================================
+   PAINÉIS
+========================================================= */
+
+.panel {
+
+    position: relative;
+
+    padding: 1.5rem;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    border:
+        1px solid
+        rgba(158,167,255,0.10);
+
+    background:
+        rgba(255,255,255,0.035);
+
+    backdrop-filter: blur(14px);
+
+    box-shadow:
+        inset 0 1px 0
+        rgba(255,255,255,0.025);
+}
+
+
+.panel::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 80px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--nebula),
+            transparent
+        );
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   CABEÇALHO DO PAINEL
+========================================================= */
+
+.panel-header {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 1rem;
+}
+
+
+h2 {
+
+    margin: 0.45rem 0 0;
+
+    font-size: 1.15rem;
+
+    font-weight: 500;
+
+    letter-spacing: -0.02em;
+}
+
+
+.link-button {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.35rem;
+
+    padding: 0;
+
+    border: 0;
+
+    background: transparent;
+
+    color: var(--nebula);
+
+    font-size: 0.68rem;
+
+    cursor: pointer;
+
+    transition:
+        gap 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+.link-button:hover {
+
+    gap: 0.6rem;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   TICKETS
+========================================================= */
+
+.tickets {
+
+    margin-top: 1.25rem;
+}
+
+
+.ticket {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.8rem;
+
+    padding: 0.95rem 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.055);
+
+    transition:
+        padding-left 0.2s ease;
+}
+
+
+.ticket:last-child {
+
+    border-bottom: 0;
+}
+
+
+.ticket:hover {
+
+    padding-left: 0.4rem;
+}
+
+
+.ticket-indicator {
+
+    width: 7px;
+    height: 7px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+}
+
+
+.ticket-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.2rem;
+
+    flex: 1;
+}
+
+
+.ticket-info strong {
+
+    font-size: 0.78rem;
+
+    font-weight: 500;
+}
+
+
+.ticket-info span {
+
+    color: #747B90;
+
+    font-size: 0.67rem;
+}
+
+
+.priority {
+
+    font-size: 0.62rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* prioridades */
+
+.ticket-indicator.urgent {
+
+    background: #FF8585;
+
+    box-shadow:
+        0 0 10px
+        rgba(255,133,133,0.55);
+}
+
+
+.urgent-text {
+
+    color: #F3A4A4;
+}
+
+
+.ticket-indicator.high {
+
+    background:
+        var(--energy);
+
+    box-shadow:
+        0 0 8px
+        rgba(255,244,163,0.3);
+}
+
+
+.high-text {
+
+    color:
+        #E5D78E;
+}
+
+
+.ticket-indicator.medium {
+
+    background:
+        var(--nebula);
+
+    box-shadow:
+        0 0 8px
+        rgba(158,167,255,0.35);
+}
+
+
+.medium-text {
+
+    color:
+        #AAB2E5;
+}
+
+
+/* =========================================================
+   AÇÕES
+========================================================= */
+
+.actions-panel {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.action-description {
+
+    margin: 0.45rem 0 0.8rem;
+
+    color: var(--text-muted);
+
+    font-size: 0.7rem;
+
+    line-height: 1.5;
+}
+
+
+/* mini órbita */
+
+.action-orbit {
+
+    position: absolute;
+
+    width: 110px;
+    height: 110px;
+
+    right: -55px;
+    top: -55px;
+
+    border:
+        1px solid
+        rgba(158,167,255,0.18);
+
+    border-radius: 50%;
+}
+
+
+.action-orbit::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    right: 15px;
+    top: 22px;
+
+    border-radius: 50%;
+
+    background:
+        var(--energy);
+
+    box-shadow:
+        0 0 10px
+        var(--energy);
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.action-button {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.7rem;
+
+    width: 100%;
+
+    margin-top: 0.65rem;
+
+    padding: 0.9rem 1rem;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.action-button:hover {
+
+    transform:
+        translateY(-2px);
+}
+
+
+.button-icon {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    font-size: 1rem;
+}
+
+
+.button-arrow {
+
+    margin-left: auto;
+
+    font-size: 0.9rem;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.action-button:hover
+.button-arrow {
+
+    transform:
+        translateX(3px);
+}
+
+
+/* primário */
+
+.action-button.primary {
+
+    border:
+        1px solid
+        rgba(158,167,255,0.55);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #6574DF,
+            #4B5ACB
+        );
+
+    color: white;
+
+    box-shadow:
+        0 10px 30px
+        rgba(59,76,207,0.22);
+}
+
+
+.action-button.primary:hover {
+
+    box-shadow:
+        0 14px 35px
+        rgba(59,76,207,0.30);
+}
+
+
+.action-button.primary
+.button-icon {
+
+    background:
+        rgba(255,255,255,0.14);
+}
+
+
+/* secundário */
+
+.action-button.secondary {
+
+    border:
+        1px solid
+        rgba(255,244,163,0.16);
+
+    background:
+        rgba(255,255,255,0.035);
+
+    color:
+        #F2F3FA;
+}
+
+
+.action-button.secondary:hover {
+
+    border-color:
+        rgba(255,244,163,0.35);
+
+    box-shadow:
+        0 10px 30px
+        rgba(255,244,163,0.06);
+}
+
+
+.lyra-icon {
+
+    color:
+        var(--energy);
+
+    text-shadow:
+        0 0 10px
+        rgba(255,244,163,0.5);
+}
+
+
+/* =========================================================
+   LYRA NOTE
+========================================================= */
+
+.lyra-note {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.7rem;
+
+    margin-top: auto;
+
+    padding-top: 1.25rem;
+}
+
+
+.lyra-star {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    color:
+        var(--energy);
+
+    background:
+        rgba(255,244,163,0.07);
+
+    border:
+        1px solid
+        rgba(255,244,163,0.12);
+
+    box-shadow:
+        0 0 20px
+        rgba(255,244,163,0.06);
+}
+
+
+.lyra-note div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.15rem;
+}
+
+
+.lyra-note strong {
+
+    font-size: 0.67rem;
+
+    font-weight: 600;
+
+    color: #C9CEDD;
+}
+
+
+.lyra-note span {
+
+    font-size: 0.58rem;
+
+    color: #686F82;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.moonlink-footer {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.75rem;
+
+    margin-top: 1.5rem;
+
+    color: #555C70;
+
+    font-size: 0.48rem;
+
+    letter-spacing: 0.3em;
+}
+
+
+.footer-line {
+
+    width: 50px;
+
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(158,167,255,0.4)
+        );
+}
+
+
+.footer-orbit {
+
+    position: relative;
+
+    width: 18px;
+    height: 8px;
+
+    border:
+        1px solid
+        rgba(158,167,255,0.4);
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-20deg);
+}
+
+
+.footer-orbit span {
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    right: -1px;
+    top: -2px;
+
+    border-radius: 50%;
+
+    background:
+        var(--energy);
+
+    box-shadow:
+        0 0 5px
+        var(--energy);
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .moon-system {
+
+        right: -170px;
+
+        opacity: 0.55;
+    }
+
+    .hero-caption {
+
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 850px) {
+
+    .content-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .moonlink-home {
+
+        padding: 1rem;
+
+        border-radius: 18px;
+    }
+
+
+    .hero {
+
+        min-height: 400px;
+
+        padding: 1.5rem;
+
+        border-radius: 18px;
+    }
+
+
+    .moon-system {
+
+        right: -220px;
+
+        top: 20px;
+
+        opacity: 0.35;
+
+        transform: scale(0.75);
+    }
+
+
+    .hero-content {
+
+        margin-top: 3.5rem;
+    }
+
+
+    .metrics {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    h1 {
+
+        font-size: 2.1rem;
+    }
+
+
+    .panel {
+
+        padding: 1.2rem;
+    }
+
+
+    .hero-status {
+
+        flex-wrap: wrap;
+    }
+
+
+    .moonlink-footer {
+
+        letter-spacing: 0.2em;
+    }
+
+    /* =========================================================
+   LOADING / EMPTY STATES
+========================================================= */
+
+.loading-state {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.7rem;
+
+    min-height: 130px;
+
+    color: #737A90;
+
+    font-size: 0.68rem;
+}
+
+
+.loading-orbit {
+
+    position: relative;
+
+    width: 24px;
+    height: 24px;
+
+    border:
+        1px solid
+        rgba(158,167,255,0.35);
+
+    border-radius: 50%;
+
+    animation:
+        moonlink-spin 1.8s linear infinite;
+}
+
+
+.loading-orbit span {
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    right: -2px;
+    top: 3px;
+
+    border-radius: 50%;
+
+    background:
+        var(--energy);
+
+    box-shadow:
+        0 0 8px
+        var(--energy);
+}
+
+
+.empty-state {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 0.6rem;
+
+    min-height: 110px;
+
+    color: #686F82;
+
+    font-size: 0.68rem;
+}
+
+
+.empty-icon {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+
+    color:
+        var(--nebula);
+
+    border:
+        1px solid
+        rgba(158,167,255,0.15);
+
+    background:
+        rgba(158,167,255,0.05);
+}
+
+
+@keyframes moonlink-spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+}

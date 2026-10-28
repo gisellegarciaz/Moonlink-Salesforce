@@ -10,6 +10,15 @@ public with sharing class MoonlinkSupportHomeController {
 
         @AuraEnabled
         public Integer inProgressCount;
+
+        @AuraEnabled
+        public Integer leadsCount;
+
+        @AuraEnabled
+        public Integer opportunitiesCount;
+
+        @AuraEnabled
+        public Integer activeClientsCount;
     }
 
 
@@ -42,6 +51,26 @@ public with sharing class MoonlinkSupportHomeController {
             SELECT COUNT()
             FROM Atendimentos__c
             WHERE Status__c = 'Em atendimento'
+        ];
+
+        // Leads ainda não convertidos
+        data.leadsCount = [
+            SELECT COUNT()
+            FROM Lead
+            WHERE IsConverted = false
+        ];
+
+        // Oportunidades cadastradas
+        data.opportunitiesCount = [
+            SELECT COUNT()
+            FROM Oportunidade__c
+        ];
+
+        // Clientes ativos
+        data.activeClientsCount = [
+            SELECT COUNT()
+            FROM Customer
+            WHERE Status_do_Cliente__c = 'Ativo'
         ];
 
 
